@@ -8,9 +8,11 @@ wget -qO- https://dl.winehq.org/wine-builds/winehq.key | apt-key add -
 apt-add-repository 'deb http://dl.winehq.org/wine-builds/ubuntu/ bionic main'
 echo "b ------WineHQ Repository added"
 
-wget -qO- https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/Release.key | sudo apt-key add -
-sh -c 'echo "deb https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./" > /etc/apt/sources.list.d/obs.list'
-apt update
+wget https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/Release.key
+sudo apt-key add Release.key
+sudo apt-add-repository 'deb https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./'
+apt-get update
+sudo apt install libfaudio0 libasound2-plugins:i386 -y
 echo "b ------Dependencies installed"
 
 apt-get install --assume-yes wine-stable-i386 wine-stable-amd64
