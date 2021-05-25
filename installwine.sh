@@ -12,7 +12,8 @@ wget https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_
 sudo apt-key add Release.key
 sudo apt-add-repository 'deb https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./'
 apt-get update
-sudo apt install libfaudio0 libasound2-plugins:i386 -y
+apt-get install libsdl2-2.0-0 -y
+apt-get install libfaudio0 libasound2-plugins:i386 -y
 echo "c ------Dependencies installed"
 
 apt-get install --assume-yes wine-stable-i386 wine-stable-amd64
