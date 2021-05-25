@@ -9,7 +9,7 @@ apt-add-repository 'deb http://dl.winehq.org/wine-builds/ubuntu/ bionic main'
 echo "b ------WineHQ Repository added"
 
 wget -qO- https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/Release.key | sudo apt-key add -
-bash -c 'echo "deb https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./" > /etc/apt/sources.list.d/obs.list'
+sh -c 'echo "deb https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./" > /etc/apt/sources.list.d/obs.list'
 apt update
 echo "b ------Dependencies installed"
 
