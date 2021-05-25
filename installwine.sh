@@ -1,6 +1,6 @@
 #!/bin/bash
 dpkg --add-architecture i386
-echo "c ------Architecture i386 Added"
+echo "d ------Architecture i386 Added"
 
 apt-get install --assume-yes software-properties-common
 apt-get update
