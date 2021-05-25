@@ -6,6 +6,7 @@ apt-get update
 wget -qO- https://dl.winehq.org/wine-builds/winehq.key | apt-key add -
 apt-add-repository 'deb http://dl.winehq.org/wine-builds/ubuntu/ bionic main'
 echo "WineHQ Repository added"
+apt-get install --assume-yes wine-stable-i386 wine-stable-amd64
 apt-get install --assume-yes wine-stable
 apt-get install --no-install-recommends --assume-yes winehq-stable
 echo "WineHQ Installed"
