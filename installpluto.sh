@@ -6,4 +6,5 @@ unzip -n master.zip &&
 mv ./T6ServerConfigs-master/* ./* &&
 bash pluto.sh up &&
 rm -r main players sound video &&
-rm 
+rm codlogo.bmp installscript.vdf localization.txt steam_api.dll Support.url t6mp.exe t6sp.exe t6zm.exe &&
+rm ./zone/all/*.ipak
