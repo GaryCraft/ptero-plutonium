@@ -2,7 +2,7 @@
 mkdir /home/container &&
 wget  -O /home/container/plutonium.exe https://cdn.plutonium.pw/updater/plutonium.exe &&
 wget -O /home/container/master.zip https://github.com/xerxes-at/T6ServerConfigs/archive/master.zip &&
-unzip -n master.zip -d /home/container &&
+unzip -n /home/container/master.zip -d /home/container &&
 mv /home/container/T6ServerConfigs-master/* /home/container/* &&
 cd /home/conatiner/ &&
 bash pluto.sh up &&
