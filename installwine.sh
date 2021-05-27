@@ -8,6 +8,4 @@ wget -nv https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbu
 apt-key add - < Release.key &&
 apt-add-repository 'deb https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./' &&
 apt-get update &&
-apt install -y --install-recommends winehq-stable &&
-wget  https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks &&
-chmod +x winetricks
+apt install -y --install-recommends winehq-stable
