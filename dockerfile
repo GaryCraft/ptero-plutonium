@@ -11,7 +11,7 @@ RUN apt-get update &&\apt-get install wget -y &&\wget https://raw.githubusercont
 
 WORKDIR /home/container
 
-RUN wget https://raw.githubusercontent.com/GaryCraft/ptero-plutonium/main/installpluto.sh &&\bash installpluto.sh
+RUN wget https://raw.githubusercontent.com/GaryCraft/ptero-plutonium/main/installpluto.sh &&\bash installpluto.sh&&\adduser -D -d /home/container container
 
 USER container
 ENV  USER=container HOME=/home/container
