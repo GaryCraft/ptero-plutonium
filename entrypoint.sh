@@ -2,7 +2,7 @@
 cd /home/container
 
 # Output Current Wine Version
-wine --version /nogui
+wine --version
 
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
