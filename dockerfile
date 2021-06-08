@@ -11,7 +11,7 @@ RUN apt-get update &&\apt-get install wget -y &&\wget https://raw.githubusercont
 
 # RUN wget https://raw.githubusercontent.com/GaryCraft/ptero-plutonium/main/installpluto.sh &&\bash installpluto.sh
 
-RUN adduser --disabled-password --home /home/container container
+RUN adduser --disabled-password --gecos "" --home /home/container container
 
 USER container
 ENV  USER=container HOME=/home/container
