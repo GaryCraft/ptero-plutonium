@@ -1,9 +1,9 @@
 # ----------------------------------
 # Pterodactyl Plutonium Dockerfile
-# Environment: Ubuntu 18.04
+# Environment: Alpine Linux 3.14.0
 # Minimum Panel Version: 1.0.0
 # ----------------------------------
-FROM ubuntu:bionic
+FROM alpine:3.14.0
 
 LABEL Author="GaryCraft@SpaceProject, <garycraft@our-space.xyz>"
 
