@@ -7,7 +7,7 @@ FROM alpine:3.14.0
 
 LABEL Author="GaryCraft@SpaceProject, <garycraft@our-space.xyz>"
 
-RUN apk update &&\apk add wget &&\wget https://raw.githubusercontent.com/GaryCraft/ptero-plutonium/main/base-alpine/installwine.sh &&\bash installwine.sh
+RUN apk update &&\apk add wget &&\wget https://raw.githubusercontent.com/GaryCraft/ptero-plutonium/main/base-alpine/installwine.sh &&\sh installwine.sh
 
 # RUN wget https://raw.githubusercontent.com/GaryCraft/ptero-plutonium/main/installpluto.sh &&\bash installpluto.sh
 
