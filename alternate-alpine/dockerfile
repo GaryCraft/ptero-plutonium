@@ -1,7 +1,7 @@
 FROM i386/alpine:3.10.2
 
 # Wine 32Bit for running EXE
-RUN apk add --no-cache wine=3.0.4-r1 freetype=2.10.0-r0
+RUN apk add --no-cache wine=3.0.4-r1 freetype=2.10.0-r1
 
 # Configure Wine
 RUN winecfg
