@@ -1,2 +1,2 @@
 git pull &&\
-docker build -t ptero-plutonium:alpine --no-cache ./base-alpine/
+docker build -t garycraft/pterowine:alpine --no-cache ./base-alpine/
