@@ -19,8 +19,6 @@ RUN rm -rf /mono/wine-mono-4.9.3.msi
 # Fake X11 display for headless execution
 RUN apk add --no-cache xvfb-run=1.20.4-r0
 
-# Copy EXE
-COPY app.exe /app.exe
+COPY ./entrypoint.sh /entrypoint.sh
 
-# Run the application
-CMD ["xvfb-run", "wine" ,"/app.exe"]
+CMD ["/bin/sh", "/entrypoint.sh"]
