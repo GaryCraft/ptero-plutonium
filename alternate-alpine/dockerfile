@@ -3,6 +3,9 @@ FROM alpine:3.10.2
 # Wine 32Bit for running EXE
 RUN apk add --no-cache wine=3.0.4-r1 freetype=2.10.0-r1
 
+# Fake X11 display for headless execution
+RUN apk add --no-cache xvfb-run=1.20.4-r0
+
 # Configure Wine
 RUN winecfg
 
@@ -16,8 +19,7 @@ RUN wget -P /mono http://dl.winehq.org/wine/wine-mono/4.9.3/wine-mono-4.9.3.msi
 RUN wine msiexec /i /mono/wine-mono-4.9.3.msi
 RUN rm -rf /mono/wine-mono-4.9.3.msi
 
-# Fake X11 display for headless execution
-RUN apk add --no-cache xvfb-run=1.20.4-r0
+
 
 COPY ./entrypoint.sh /entrypoint.sh
 
