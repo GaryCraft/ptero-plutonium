@@ -1,4 +1,4 @@
 #!/bin/bash
 apk add --no-cache wine &&\
-wine --version &&\
+wine64 --version &&\
 sed -i 's/NoDisplay=false/NoDisplay=true/' /usr/share/applications/wine.desktop
