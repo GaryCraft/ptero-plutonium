@@ -1,2 +1,2 @@
 git pull &&\
-docker build -t ptero-plutonium:ubuntu ./base-ubuntu/
+docker build -t ptero-plutonium:ubuntu --no-cache ./base-ubuntu/

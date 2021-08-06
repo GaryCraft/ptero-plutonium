@@ -1,2 +1,2 @@
 git pull &&\
-docker build -t ptero-plutonium:alpine ./base-alpine/
+docker build -t ptero-plutonium:alpine --nocache ./base-alpine/
