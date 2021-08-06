@@ -1,4 +1,4 @@
-FROM i386/alpine:3.10.2
+FROM alpine:3.10.2
 
 # Wine 32Bit for running EXE
 RUN apk add --no-cache wine=3.0.4-r1 freetype=2.10.0-r1
