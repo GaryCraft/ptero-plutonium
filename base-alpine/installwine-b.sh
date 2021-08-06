@@ -1,5 +1,5 @@
 #!/bin/bash
-apk add --no-cache wine freetype &&\
+apk add --no-cache wine=6.0-r1 freetype &&\
 apk update && apk add wine && ln -s /usr/bin/wine64 /usr/bin/wine &&\
 winecfg &&\
 apk add --no-cache wget &&\
