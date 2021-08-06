@@ -11,7 +11,8 @@ RUN apk update &&\apk add wget &&\wget https://raw.githubusercontent.com/GaryCra
 
 # RUN wget https://raw.githubusercontent.com/GaryCraft/ptero-plutonium/main/installpluto.sh &&\bash installpluto.sh
 
-RUN adduser --disabled-password --gecos "" --home /home/container container
+RUN apk add --no-cache --update curl ca-certificates openssl git tar bash sqlite fontconfig \
+    && adduser --disabled-password --home /home/container container
 
 USER container
 ENV  USER=container HOME=/home/container
