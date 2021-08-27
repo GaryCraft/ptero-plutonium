@@ -12,4 +12,4 @@ apt-get update &&
 apt install -y --install-recommends winehq-stable &&
 wine --version && \
 
-echo "Build Finished"
+echo "Install Finished"
