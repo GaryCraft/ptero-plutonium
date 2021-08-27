@@ -10,7 +10,7 @@ RUN apk add --no-cache xvfb-run=1.20.4-r0
 RUN winecfg
 
 #Avoid Permission Error
-RUN sudo rm -rf ~/docker-data/wine && mkdir ~/docker-data/wine
+RUN rm -rf ~/docker-data/wine && mkdir ~/docker-data/wine
 
 # Install wget
 RUN apk add --no-cache wget=1.20.3-r0 && ln -s /usr/bin/wine64 /usr/bin/wine
