@@ -9,5 +9,7 @@ wget -nv https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbu
 apt-key add - < Release.key &&
 apt-add-repository 'deb https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./' &&
 apt-get update &&
-apt install -y --install-recommends winehq-stable
+apt install -y --install-recommends winehq-stable &&
 wine --version
+
+#sed -i 's/NoDisplay=false/NoDisplay=true/' /usr/share/applications/wine.desktop
