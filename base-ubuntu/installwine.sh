@@ -12,8 +12,9 @@ apt-get update &&
 apt install -y --install-recommends winehq-stable &&
 wine --version && 
 apt-get install -y winetricks &&
-winetricks dotnet45 &&
+#winetricks dotnet45 &&
 
-#wget https://dl.winehq.org/wine/wine-mono/6.0.0/wine-mono-6.0.0-x86.msi -O mono.msi
-
+wget https://dl.winehq.org/wine/wine-mono/6.0.0/wine-mono-6.0.0-x86.msi -O mono.msi &&
+wine mono.msi &&
+rm mono.msi &&
 echo "Install Finished"
