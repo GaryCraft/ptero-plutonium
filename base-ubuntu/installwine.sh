@@ -10,6 +10,10 @@ apt-key add - < Release.key &&
 apt-add-repository 'deb https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./' &&
 apt-get update &&
 apt install -y --install-recommends winehq-stable &&
-wine --version && \
+wine --version && 
+apt-get install winetricks &&
+winetricks dotnet45 &&
+
+#wget https://dl.winehq.org/wine/wine-mono/6.0.0/wine-mono-6.0.0-x86.msi -O mono.msi
 
 echo "Install Finished"
