@@ -11,7 +11,7 @@ apt-add-repository 'deb https://download.opensuse.org/repositories/Emulators:/Wi
 apt-get update &&
 apt install -y --install-recommends winehq-stable &&
 wine --version && 
-apt-get install winetricks &&
+apt-get install -y winetricks &&
 winetricks dotnet45 &&
 
 #wget https://dl.winehq.org/wine/wine-mono/6.0.0/wine-mono-6.0.0-x86.msi -O mono.msi
