@@ -1,0 +1,44 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v1",
+        "update_url": null
+    },
+    "exported_at": "2021-08-27T19:46:11-05:00",
+    "name": "Plutonium",
+    "author": "ptero@our-space.xyz",
+    "description": null,
+    "features": null,
+    "images": [
+        "docker.io\/garycraft\/pterowine:ubuntu",
+        "docker.io\/garycraft\/pterowine:oldalpine",
+        "docker.io\/garycraft\/pterowine:alpine",
+        "tuxifan\/pterodactyl-wine"
+    ],
+    "file_denylist": [],
+    "startup": "if [[ grep -q nan st.txt ]]; wine cmd.exe \/C \\!updatePluto.bat \/nogui && echo \"inst\" > st.txt; fi; if [[grep -q  inst st.txt]]; then wine cmd.exe \/C \\!start.bat \/nogui; fi;",
+    "config": {
+        "files": "{\r\n    \"!start.bat\": {\r\n        \"parser\": \"properties\",\r\n        \"find\": {\r\n            \"set port\": \"{{server.build.default.port}}\"\r\n        }\r\n    }\r\n}",
+        "startup": "{\r\n    \"done\": \" server start\",\r\n    \"userInteraction\": []\r\n}",
+        "logs": "{}",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\napt -y update\r\napt -y --no-install-recommends install unzip wget ca-certificates\r\n\r\nif [ ! -d \/mnt\/server\/ ]; then\r\n    mkdir \/mnt\/server\/\r\nfi\r\n\r\ncd \/tmp\/\r\n\r\nwget https:\/\/github.com\/xerxes-at\/T6ServerConfigs\/archive\/master.zip\r\n\r\nunzip -n master.zip\r\nmv \/tmp\/T6ServerConfigs-master\/* \/mnt\/server\/\r\ncd \/mnt\/server\/\r\nrm plutonium.exe\r\nwget https:\/\/cdn.plutonium.pw\/updater\/plutonium.exe\r\nrm \\!start_zm_server.bat\r\n#rm pluto.sh\r\nmv \\!start_mp_server.bat \\!start.bat\r\necho nan >> st.txt\r\n\r\n\r\necho \"\\n# Unofficial Pterodactyl-Plutonium Server \\nThe help is not yet written please refer to garycraft@our-space.xyz or [<@478668961626587157>](paste this in discord chat) in discord\" >> README.md\r\n#echo \"if grep -q nan st.txt; then wine cmd.exe \/C \\!updatePluto.bat \/nogui && echo \"inst\" > st.txt; else wine cmd.exe \/C \\!start.bat \/nogui; fi\" > start.sh",
+            "container": "debian:buster-slim",
+            "entrypoint": "sh"
+        }
+    },
+    "variables": [
+        {
+            "name": "Plutonium server key",
+            "description": "",
+            "env_variable": "PLUTO_KEY",
+            "default_value": "placeServerKeyHere",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "required|string"
+        }
+    ]
+}
