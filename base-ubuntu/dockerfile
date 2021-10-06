@@ -1,9 +1,9 @@
 # ----------------------------------
 # Pterodactyl Wine Dockerfile
-# Environment: Ubuntu 18.04
+# Environment: Ubuntu 20.04
 # Minimum Panel Version: 1.0.0
 # ----------------------------------
-FROM ubuntu:bionic
+FROM ubuntu:focal
 
 LABEL Mantainer="GaryCraft@SpaceProject <garycraft@our-space.xyz>"
 
