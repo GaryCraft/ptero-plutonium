@@ -11,8 +11,6 @@
     "features": null,
     "images": [
         "docker.io\/garycraft\/pterowine:ubuntu",
-        "docker.io\/garycraft\/pterowine:oldalpine",
-        "docker.io\/garycraft\/pterowine:alpine",
         "tuxifan\/pterodactyl-wine"
     ],
     "file_denylist": [],
