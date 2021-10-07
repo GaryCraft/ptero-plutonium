@@ -1,5 +1,5 @@
 # ptero-plutonium (Please suggest a better name for this repo)
-Files Used to Build and run a [Plutonium](https://plutonium.pw) Server using the [Pterodactyl](https://pterodactyl.io) panel
+Files Used to Build and run a [Plutonium](https://plutonium.pw) Server using the [Pterodactyl](https://pterodactyl.io) panel in Linux
 
 ```yml
 - This is not ready yet for use, please wait until it is or help contributing
