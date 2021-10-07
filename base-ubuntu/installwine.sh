@@ -21,9 +21,11 @@ apt-add-repository 'deb https://download.opensuse.org/repositories/Emulators:/Wi
 apt-get update
 
 ## Now we will install wine
-apt-get install -y --install-recommends winehq-stable xvfb
+apt-get install -y --install-recommends winehq-stable
+apt-get install -y xvfb
+
 # Setup Virtual Screen 
-Xvfb :0 -screen 0 1024x768x16 
+xvfb :0 -screen 0 1024x768x16 
 
 # Clean key files
 rm winehq.key Release.key
