@@ -22,6 +22,8 @@ apt-get update
 
 ## Now we will install wine
 apt-get install -y --install-recommends winehq-stable xvfb
+# Setup Virtual Screen 
+Xvfb :0 -screen 0 1024x768x16 
 
 # Clean key files
 rm winehq.key Release.key
