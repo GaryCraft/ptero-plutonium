@@ -31,7 +31,7 @@ rm winehq.key Release.key
 wine --version
 
 # Add Variables to the environment at the end of ~/.bashrc
-echo -e 'export WINEPREFIX=~/.wine\nexport WINEDEBUG=fixme-all\nexport WINEARCH=win64\nexport DISPLAY=:0.0' >> ~/.bashrc
+echo -e 'export WINEPREFIX=~/.wine\nexport WINEDEBUG=fixme-all\nexport WINEARCH=win64' >> ~/.bashrc
 
 # Update our session
 source ~/.bashrc
