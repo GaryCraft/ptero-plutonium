@@ -21,20 +21,28 @@ apt-add-repository 'deb https://download.opensuse.org/repositories/Emulators:/Wi
 apt-get update
 
 ## Now we will install wine
-apt-get install -y --install-recommends winehq-stable
+apt-get install -y --install-recommends winehq-stable winbind
 apt-get install -y xvfb
-
 
 # Clean key files
 rm winehq.key Release.key
 
-wine --version
+WINEVER=wine --version
 
-# Add Variables to the environment at the end of ~/.bashrc
-echo -e 'export WINEPREFIX=~/.wine\nexport WINEDEBUG=fixme-all\nexport WINEARCH=win64' >> ~/.bashrc
+# Install winetricks
+wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
+chmod 777 winetricks
+cp winetricks /usr/local/bin
 
-# Update our session
-source ~/.bashrc
 
 # Configure our wine environment
 winecfg
+
+# Install Mono
+wget -P /mono http://dl.winehq.org/wine/wine-mono/$WINEVER/wine-mono-$WINEVER.msi
+wineboot -u && msiexec /i /mono/wine-mono-$WINEVER.msi
+rm -rf /mono/wine-mono-$WINEVER.msi
+
+
+# Install vsc++ redistributable
+wineboot -u && xvfb-run winetricks -q vcrun2008
