@@ -36,7 +36,7 @@ cp winetricks /usr/local/bin
 
 
 # Configure our wine environment
-WINEDEBUG=fixme-all WINEARCH=win64 WINEPREFIX=/home/container/.wine winecfg
+winecfg
 
 # Install Mono
 wget -P /mono http://dl.winehq.org/wine/wine-mono/4.9.4/wine-mono-4.9.4.msi
