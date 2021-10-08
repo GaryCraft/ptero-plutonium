@@ -38,8 +38,12 @@ cp winetricks /usr/local/bin
 # Configure our wine environment
 xvfb-run winecfg
 
+# Install Mono
+wget -P /mono http://dl.winehq.org/wine/wine-mono/4.9.4/wine-mono-4.9.4.msi
+wineboot -u && msiexec /i /mono/wine-mono-4.9.4.msi
+rm -rf /mono/wine-mono-4.9.4.msi
 # Install .NET
-wineboot -u && winetricks -q dotnet452
+#wineboot -u && winetricks -q dotnet452
 
 
 # Install vsc++ redistributable
