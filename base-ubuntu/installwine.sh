@@ -39,8 +39,8 @@ cp winetricks /usr/local/bin
 xvfb-run winecfg
 
 # Install .NET
-wineboot -u && xvfb-run winetricks -q dotnet452
+wineboot -u && winetricks -q dotnet452
 
 
 # Install vsc++ redistributable
-wineboot -u && xvfb-run winetricks -q vcrun2008
+#wineboot -u && xvfb-run winetricks -q vcrun2008
