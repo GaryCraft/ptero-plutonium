@@ -29,6 +29,7 @@ rm winehq.key Release.key
 
 WINEVER=wine --version
 
+echo "$WINEVER"
 # Install winetricks
 wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
 chmod 777 winetricks
@@ -39,9 +40,9 @@ cp winetricks /usr/local/bin
 winecfg
 
 # Install Mono
-wget -P /mono http://dl.winehq.org/wine/wine-mono/4.9.4/wine-mono-4.9.4.msi
-wineboot -u && msiexec /i /mono/wine-mono-4.9.4.msi
-rm -rf /mono/wine-mono-4.9.4.msi
+wget -P /mono http://dl.winehq.org/wine/wine-mono/$WINEVER/wine-mono-$WINEVER.msi
+wineboot -u && msiexec /i /mono/wine-mono-$WINEVER.msi
+rm -rf /mono/wine-mono-$WINEVER.msi
 # Install .NET
 #wineboot -u && winetricks -q dotnet452
 
