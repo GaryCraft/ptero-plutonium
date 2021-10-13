@@ -5,7 +5,7 @@
 # ----------------------------------
 FROM ubuntu:focal
 
-LABEL Mantainer="GaryCraft@SpaceProject <garycraft@our-space.xyz>"
+LABEL maintainer="GaryCraft@SpaceProject <garycraft@our-space.xyz>"
 
 RUN adduser --disabled-password --gecos "" --home /home/container container
 

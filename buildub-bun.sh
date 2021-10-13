@@ -1,0 +1,1 @@
+git pull && docker build -t garycraft/plutonium:ubuntu --no-cache ./bundled-ubuntu/
