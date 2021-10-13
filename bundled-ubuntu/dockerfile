@@ -19,7 +19,7 @@ ENV  USER=container HOME=/home/container
 
 USER container
 
-WORKDIR /home/container/T6_Server/Plutonium
+WORKDIR /home/container/T6_Server/Plutonium/
 
 COPY ./entrypoint.sh /entrypoint.sh
 
