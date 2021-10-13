@@ -10,7 +10,7 @@ export DISPLAY=:0.0
 
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
-echo ":/home/container/T6_Server/Plutonium$ ${MODIFIED_STARTUP}"
+echo "${MODIFIED_STARTUP}"
 
 # Run the Server
-${MODIFIED_STARTUP}
+echo "${MODIFIED_STARTUP}" > /home/container/start.sh && bash start.sh
