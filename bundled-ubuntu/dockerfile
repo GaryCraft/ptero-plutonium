@@ -3,7 +3,7 @@
 # Environment: Ubuntu 20.04 Plutonium
 # Minimum Panel Version: 1.0.0
 # ----------------------------------
-FROM garycraft/pterowine:ubuntu
+FROM ubuntu:focal
 
 LABEL maintainer="GaryCraft@SpaceProject <garycraft@our-space.xyz>"
 
