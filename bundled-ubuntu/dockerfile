@@ -19,6 +19,8 @@ ENV  USER=container HOME=/home/container
 
 USER container
 
+RUN winecfg
+
 WORKDIR /home/container/T6_Server/Plutonium/
 
 COPY ./entrypoint.sh /entrypoint.sh
