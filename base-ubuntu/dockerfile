@@ -7,13 +7,13 @@ FROM ubuntu:focal
 
 LABEL maintainer="GaryCraft@SpaceProject <garycraft@our-space.xyz>"
 
-RUN adduser --disabled-password --gecos "" --home /home/container container
-
 ENV WINEDEBUG=fixme-all
 ENV WINEARCH=win64
-ENV WINEPREFIX=/.wine
+ENV WINEPREFIX=/home/container/.wine
 
 RUN apt-get update && apt-get install wget -y && wget https://raw.githubusercontent.com/GaryCraft/ptero-plutonium/main/base-ubuntu/installwine.sh && bash installwine.sh
+
+RUN adduser --disabled-password --gecos "" --home /home/container container
 
 ENV  USER=container HOME=/home/container
 
