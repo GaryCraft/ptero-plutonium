@@ -37,7 +37,7 @@ cp winetricks /usr/local/bin
 
 
 # Configure our wine environment
-#winecfg #Moved to the dockerfile
+winecfg
 
 # Install Mono
 #wget -P /mono http://dl.winehq.org/wine/wine-mono/$WINEVER/wine-mono-$WINEVER.msi
