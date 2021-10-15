@@ -1,0 +1,22 @@
+# ----------------------------------
+# Pterodactyl Plutonium Egg Dockerfile
+# Environment: Ubuntu 20.04
+# Minimum Panel Version: 1.0.0
+# ----------------------------------
+FROM garycraft/pterowine:ubuntu
+
+LABEL maintainer="GaryCraft@SpaceProject <garycraft@our-space.xyz>"
+
+ENV WINEDEBUG=fixme-all
+ENV WINEARCH=win64
+ENV WINEPREFIX=/home/container/.wine
+
+ENV  USER=container HOME=/home/container
+
+USER container
+
+WORKDIR /home/container
+
+COPY ./entrypoint.sh /
+
+CMD ["/bin/bash", "/entrypoint.sh"]
