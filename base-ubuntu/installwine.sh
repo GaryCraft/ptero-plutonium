@@ -27,9 +27,9 @@ apt-get install -y xvfb
 # Clean key files
 rm winehq.key Release.key
 
-WINEVER=wine --version
+wine --version
 
-echo "$WINEVER"
+
 # Install winetricks
 wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
 chmod u+x winetricks
