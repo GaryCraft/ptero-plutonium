@@ -4,6 +4,7 @@ cd /home/container
 # Output Current Wine Version
 wine --version
 
+# If .wine directory doesn't exist, configure
 if [ ! -d /home/container/.wine ]; 
 then xvfb-run winecfg; 
 fi;
