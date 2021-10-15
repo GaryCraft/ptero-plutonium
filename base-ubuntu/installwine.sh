@@ -32,17 +32,17 @@ WINEVER=wine --version
 echo "$WINEVER"
 # Install winetricks
 wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
-chmod 777 winetricks
+chmod u+x winetricks
 cp winetricks /usr/local/bin
 
 
 # Configure our wine environment
-winecfg
+#winecfg #Moved to the dockerfile
 
 # Install Mono
-wget -P /mono http://dl.winehq.org/wine/wine-mono/$WINEVER/wine-mono-$WINEVER.msi
-wineboot -u && msiexec /i /mono/wine-mono-$WINEVER.msi
-rm -rf /mono/wine-mono-$WINEVER.msi
+#wget -P /mono http://dl.winehq.org/wine/wine-mono/$WINEVER/wine-mono-$WINEVER.msi
+#wineboot -u && msiexec /i /mono/wine-mono-$WINEVER.msi
+#rm -rf /mono/wine-mono-$WINEVER.msi
 # Install .NET
 #wineboot -u && winetricks -q dotnet452
 
