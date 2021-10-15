@@ -4,6 +4,9 @@ cd /home/container
 # Output Current Wine Version
 wine --version
 
+if [ ! -d /home/container/.wine ]; 
+then xvfb-run winecfg; 
+fi;
 # Setup Virtual Screen 
 # Xvfb :0 -screen 0 1024x768x16 -nolisten unix
 # export DISPLAY=:0.0
