@@ -11,11 +11,11 @@ ENV WINEDEBUG=fixme-all
 ENV WINEARCH=win64
 ENV WINEPREFIX=/home/container/.wine
 
-ENV  USER=container HOME=/home/container/T6_Server/Plutonium/
+ENV  USER=container HOME=/home/container/
 
 USER container
 
-WORKDIR /home/container/T6_Server/Plutonium/
+WORKDIR /home/container/
 
 COPY ./entrypoint.sh /
 
