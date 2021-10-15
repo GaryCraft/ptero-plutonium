@@ -9,7 +9,7 @@ This is intended to make Hosting a server easier and faster, removing the worry 
 
 ## Required
  - A Pterodactyl Panel Setup in a VPS with at least one Wings node
- > Setting Up a panel is not hard, and it will make easier for you to manage your own servers, you can run the node on the same VPS
+ > Setting Up a panel is not hard, and it will make easier for you to manage your own servers, you can run the node on the same VPS. [Pterodactyl Documentation](https://pterodactyl.io)
  - Enthusiasm to play
  > Yeah, as simple as that, no need to worry about anything else really
 
