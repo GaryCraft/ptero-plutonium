@@ -21,6 +21,8 @@ USER container
 
 RUN winecfg
 
+RUN mkdir /wineprefix && cp -r /home/container/.wine /wineprefix && chmod 777 /wineprefix
+
 WORKDIR /home/container
 
 COPY ./entrypoint.sh /entrypoint.sh

@@ -4,10 +4,11 @@ cd /home/container
 # Output Current Wine Version
 wine --version
 
-# If .wine directory doesn't exist, configure
+# If .wine directory doesn't exist, copy backup
 if [ ! -d /home/container/.wine ]; 
-then xvfb-run winecfg; 
+then cp -r /wineprefix /home/container/.wine
 fi;
+
 # Setup Virtual Screen 
 # Xvfb :0 -screen 0 1024x768x16 -nolisten unix
 # export DISPLAY=:0.0
