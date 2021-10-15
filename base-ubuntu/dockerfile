@@ -21,7 +21,11 @@ USER container
 
 RUN winecfg
 
+USER root
+
 RUN mkdir /wineprefix && cp -r /home/container/.wine /wineprefix && chmod 777 /wineprefix
+
+USER container
 
 WORKDIR /home/container
 
