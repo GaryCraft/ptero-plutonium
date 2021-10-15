@@ -5,7 +5,7 @@ cd /home/container
 wine --version
 
 # Setup Virtual Screen 
-Xvfb :0 -screen 0 1024x768x16 -nolisten tcp -nolisten unix
+Xvfb :0 -screen 0 1024x768x16 -nolisten unix
 export DISPLAY=:0.0
 
 # Replace Startup Variables
