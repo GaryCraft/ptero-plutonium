@@ -9,7 +9,7 @@ LABEL maintainer="GaryCraft@SpaceProject <garycraft@our-space.xyz>"
 
 ENV WINEDEBUG=fixme-all
 ENV WINEARCH=win64
-ENV WINEPREFIX=/.wine
+ENV WINEPREFIX=/home/container/.wine
 
 RUN adduser --disabled-password --gecos "" --home /home/container container
 
@@ -18,6 +18,8 @@ RUN apt-get update && apt-get install wget -y && wget https://raw.githubusercont
 ENV  USER=container HOME=/home/container
 
 USER container
+
+RUN winecfg
 
 WORKDIR /home/container
 
