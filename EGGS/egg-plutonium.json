@@ -13,16 +13,16 @@
         "docker.io\/garycraft\/ptero-plutonium:ubuntu"
     ],
     "file_denylist": [],
-    "startup": "bin\/plutonium-bootstrapper-win32.exe {{PLUTOMODE}} \/home\/container\/T6_Server\/Server\/{{PLUTOMODEDIR}} -dedicated +start_map_rotate +set key {{PLUTOKEY}} +set net_port {{SERVER_PORT}} +set sv_config {{PLUTOCFG}}",
+    "startup": "bin\/plutonium-bootstrapper-win32.exe {{PLUTOMODE}} \/home\/container\/T6_Server\/Server\/{{PLUTOMODEDIR}}\/ -dedicated +start_map_rotate +set key {{PLUTOKEY}} +set net_port {{SERVER_PORT}} +set sv_config {{PLUTOCFG}}",
     "config": {
         "files": "{\r\n    \"T6_Server\/Plutonium\/T6Server.sh\": {\r\n        \"parser\": \"properties\",\r\n        \"find\": {\r\n            \"PORT\": \"{{server.build.default.port}}\",\r\n            \"KEY\": \"{{server.build.env.PLUTOKEY}}\",\r\n            \"MODE\": \"{{server.build.env.PLUTOMODE}}\",\r\n            \"PAT\": \"\/home\/container\/T6_Server\/Server\"\r\n        }\r\n    }\r\n}",
-        "startup": "{\r\n    \"done\": \"Heartbeat Successful\"\r\n}",
+        "startup": "{\r\n    \"done\": \"Heartbeat successful\"\r\n}",
         "logs": "{}",
         "stop": "^^C"
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/bash\r\n\r\napt -y update\r\napt -y --no-install-recommends install unzip wget ca-certificates\r\n\r\n## Mount Pterodactyl Docker Container\r\nif [ ! -d \/mnt\/server\/ ]; then\r\n    mkdir \/mnt\/server\/\r\nfi\r\n\r\n## Go to server directory and download PreSetup Server\r\ncd \/mnt\/server\r\nwget https:\/\/vault.our-space.xyz\/ATOM\/T6_Server.zip -q --show-progress\r\n\r\n## Extract Server\r\nunzip -o T6_Server.zip\r\nrm T6_Server.zip\r\n\r\n## Create Shortcut\r\nln -s \/mnt\/server\/T6_Server\/Server\/zone \/mnt\/server\/T6_Server\/Server\/Zombie\/zone\r\nln -s \/mnt\/server\/T6_Server\/Server\/zone \/mnt\/server\/T6_Server\/Server\/Multiplayer\/zone\r\n\r\n## Make start Script Executable\r\nchmod 777 \/mnt\/server\/T6_Server\/Plutonium\/T6Server.sh\r\n\r\n## Make User Aware of the Setup Origin\r\necho \"# Unofficial Pterodactyl-Plutonium Server \\nThe help is not yet written please refer to garycraft@our-space.xyz or [<@478668961626587157>](paste this in discord chat) in discord\" > README.md",
+            "script": "#!\/bin\/bash\r\n\r\napt -y update\r\napt -y --no-install-recommends install unzip wget ca-certificates\r\n\r\n## Mount Pterodactyl Docker Container\r\nif [ ! -d \/mnt\/server\/ ]; then\r\n    mkdir \/mnt\/server\/\r\nfi\r\n\r\n## Go to server directory and download PreSetup Server\r\ncd \/mnt\/server\r\necho \"Downloading latest version of plutonium please wait...\"\r\nwget https:\/\/vault.our-space.xyz\/ATOM\/T6_Server.zip -q --show-progress\r\n\r\n## Extract Server\r\nunzip -o T6_Server.zip\r\nrm T6_Server.zip\r\n\r\n## Create Shortcut\r\nln -s \/mnt\/server\/T6_Server\/Server\/zone \/mnt\/server\/T6_Server\/Server\/Zombie\/zone\r\nln -s \/mnt\/server\/T6_Server\/Server\/zone \/mnt\/server\/T6_Server\/Server\/Multiplayer\/zone\r\n\r\n\r\n## Make User Aware of the Setup Origin\r\necho \"# Unofficial Pterodactyl-Plutonium Server \\nThe help is not yet written please refer to garycraft@our-space.xyz or [<@478668961626587157>](paste this in discord chat) in discord\" > README.md\r\n\r\necho \"Server Succesfully Installed Enjoy!\"",
             "container": "debian:buster-slim",
             "entrypoint": "sh"
         }
