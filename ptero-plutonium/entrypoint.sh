@@ -9,7 +9,8 @@ if [ ! -d /home/container/.wine ];
 then echo "Using Wine backup, copying to container..." &&\
 cp -r /wineprefix /home/container/.wine &&\
 ln -s /home/container/T6_Server/Server/zone /home/container/T6_Server/Server/Zombie/zone &&\
-ln -s /home/container/T6_Server/Server/zone /home/container/T6_Server/Server/Multiplayer/zone
+ln -s /home/container/T6_Server/Server/zone /home/container/T6_Server/Server/Multiplayer/zone &&\
+echo "Copied Files Succesfully"
 fi;
 
 # Setup Virtual Screen 
