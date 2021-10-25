@@ -2,7 +2,7 @@
 Files Used to Build and run a [Plutonium](https://plutonium.pw) Server using the [Pterodactyl](https://pterodactyl.io) panel in Linux
 
 ```yml
-- This is not ready yet for use, please wait until it is or help contributing
+- This Repository is in working state, however if you thing there's an improvement to be made please contribute in the issues tab or send me a message
 ```
 
 This is intended to make Hosting a server easier and faster, removing the worry of making your own full installation.
