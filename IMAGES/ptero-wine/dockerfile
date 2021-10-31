@@ -13,7 +13,7 @@ ENV WINEPREFIX=/home/container/.wine
 
 RUN adduser --disabled-password --gecos "" --home /home/container container
 
-RUN apt-get update && apt-get install wget -y && wget https://raw.githubusercontent.com/GaryCraft/ptero-plutonium/main/base-ubuntu/installwine.sh && bash installwine.sh
+RUN apt-get update && apt-get install wget -y && wget https://raw.githubusercontent.com/GaryCraft/ptero-plutonium/main/IMAGES/ptero-wine/installwine.sh && bash installwine.sh
 
 ENV  USER=container HOME=/home/container
 

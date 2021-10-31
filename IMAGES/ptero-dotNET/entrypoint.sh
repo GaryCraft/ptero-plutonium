@@ -1,8 +1,8 @@
 #!/bin/bash
 cd /home/container
 
-# Output Current Wine Version
-wine --version
+# Output Current .NET Version
+dotnet --version
 
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
