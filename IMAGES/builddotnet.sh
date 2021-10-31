@@ -1,2 +1,2 @@
 git pull &&\
-docker build -t garycraft/ptero-dotNET:latest --no-cache ./ptero-dotNET/
+docker build -t garycraft/ptero-dotnet:latest --no-cache ./ptero-dotNET/
