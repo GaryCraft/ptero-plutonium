@@ -4,6 +4,12 @@ cd /home/container
 # Output Current Wine Version
 wine --version
 
+# If .wine directory doesn't exist, copy backup
+if [ ! -d /home/container/.wine ]; 
+then echo "Using Wine backup, copying to container..." && cp -r /wineprefix /home/container/.wine
+echo "Copied Files Succesfully"
+fi;
+
 # Create Shortcuts for zone files
 if [ ! -e /home/container/Server/Zombie/zone ];
 then ln -s /home/container/Server/zone /home/container/Server/Zombie/zone
