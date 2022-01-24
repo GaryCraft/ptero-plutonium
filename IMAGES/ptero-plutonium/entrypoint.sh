@@ -6,11 +6,16 @@ wine --version
 
 # If .wine directory doesn't exist, copy backup
 if [ ! -d /home/container/.wine ]; 
-then echo "Using Wine backup, copying to container..." &&\
-cp -r /wineprefix /home/container/.wine &&\
-ln -s /home/container/T6_Server/Server/zone /home/container/T6_Server/Server/Zombie/zone || true &&\
-ln -s /home/container/T6_Server/Server/zone /home/container/T6_Server/Server/Multiplayer/zone || true &&\
+then echo "Using Wine backup, copying to container..." && cp -r /wineprefix /home/container/.wine
 echo "Copied Files Succesfully"
+fi;
+
+# Create Shortcuts for zone files
+if [ ! -e /home/container/Server/Zombie/zone ];
+then ln -s /home/container/Server/zone /home/container/Server/Zombie/zone
+fi;
+if [ ! -e /home/container/Server/Multiplayer/zone ];
+then ln -s /home/container/Server/zone /home/container/Server/Multiplayer/zone
 fi;
 
 # Setup Virtual Screen 
@@ -22,4 +27,4 @@ MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g'
 echo "Running ${MODIFIED_STARTUP}"
 
 # Run the Server
-( cd /home/container/T6_Server/Plutonium && exec xvfb-run wine ${MODIFIED_STARTUP} )
+( cd /home/container/Plutonium && exec xvfb-run wine ${MODIFIED_STARTUP} )
