@@ -7,6 +7,7 @@ FROM garycraft/pterowine:ubuntu
 
 LABEL maintainer="GaryCraft@SpaceProject <garycraft@our-space.xyz>"
 
+ENV WINEDEBUG=fixme-all
 ENV WINEARCH=win64
 ENV WINEPREFIX=/home/container/.wine
 
