@@ -6,7 +6,8 @@ wine --version
 
 # If .wine directory doesn't exist, copy backup
 if [ ! -d /home/container/.wine ]; 
-then cp -r /wineprefix /home/container/.wine
+then echo "Using Wine backup, copying to container..." && cp -r /wineprefix /home/container/.wine
+echo "Copied Files Succesfully"
 fi;
 
 # Setup Virtual Screen 
