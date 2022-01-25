@@ -4,7 +4,7 @@
         "version": "PTDL_v1",
         "update_url": "https://raw.githubusercontent.com/GaryCraft/ptero-plutonium/main/EGGS/egg-plutonium-t6.json"
     },
-    "exported_at": "2021-12-29T14:18:36-06:00",
+    "exported_at": "2022-01-25T20:07:03+01:00",
     "name": "Plutonium",
     "author": "atom@our-space.xyz",
     "description": null,
@@ -22,7 +22,7 @@
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/bash\r\n\r\napt -y update\r\napt -y --no-install-recommends install unzip wget ca-certificates\r\n\r\n## Mount Pterodactyl Docker Container\r\nif [ ! -d \/mnt\/server\/ ]; then\r\n    mkdir \/mnt\/server\/\r\nfi\r\n\r\n## Go to server directory\r\ncd \/mnt\/server\r\n\r\n## Backup Config Files\r\nrm *.bak\r\ncp .\/Server\/Multiplayer\/main\/dedicated.cfg dedicated.cfg.bak\r\ncp .\/Server\/Zombie\/main\/dedicated_zm.cfg dedicated_zm.cfg.bak\r\n\r\n## Download Latest Server File Version\r\necho \"Downloading latest version of plutonium please wait...\"\r\nwget https:\/\/dl.axite.dev\/T6-Server.zip -q --show-progress\r\n\r\n## Extract Server\r\nunzip -o T6-Server.zip\r\nrm T6-Server.zip\r\nmv .\/T6-Server\/* .\/\r\nrm -r .\/T6-Server\r\n\r\n## Clean unneeded files\r\nif [ -d .\/IW4MAdmin];\r\nthen rm -r .\/IW4MAdmin\r\nfi;\r\n\r\n## Restore Config Files\r\ncp -rf dedicated.cfg.bak .\/Server\/Multiplayer\/main\/dedicated.cfg\r\ncp -rf dedicated_zm.cfg.bak .\/Server\/Multiplayer\/main\/dedicated_zm.cfg\r\n\r\nchmod -R 777 .\/*\r\n## Make User Aware of the Setup Origin\r\necho \"# Unofficial Pterodactyl-Plutonium Server https:\/\/github.com\/GaryCraft\/ptero-plutonium\" > README.md\r\n\r\necho \"Server Succesfully Installed Enjoy!\"",
+            "script": "#!\/bin\/bash\r\n\r\napt -y update\r\napt -y --no-install-recommends install unzip wget ca-certificates\r\n\r\n## Mount Pterodactyl Docker Container\r\nif [ ! -d \/mnt\/server\/ ]; then\r\n    mkdir \/mnt\/server\/\r\nfi\r\n\r\n## Go to server directory\r\ncd \/mnt\/server\r\n\r\n## Backup Config Files\r\nrm *.bak\r\ncp .\/Server\/Multiplayer\/main\/dedicated.cfg dedicated.cfg.bak\r\ncp .\/Server\/Zombie\/main\/dedicated_zm.cfg dedicated_zm.cfg.bak\r\n\r\n## Download Latest Server File Version\r\necho \"Downloading latest version of plutonium please wait...\"\r\nwget ${SERVER_DOWNLOAD} -q --show-progress\r\n\r\n## Extract Server\r\nunzip -o T6-Server.zip\r\nrm T6-Server.zip\r\nmv .\/T6-Server\/* .\/\r\nrm -r .\/T6-Server\r\n\r\n## Clean unneeded files\r\nif [ -d .\/IW4MAdmin];\r\nthen rm -r .\/IW4MAdmin\r\nfi;\r\n\r\n## Restore Config Files\r\ncp -rf dedicated.cfg.bak .\/Server\/Multiplayer\/main\/dedicated.cfg\r\ncp -rf dedicated_zm.cfg.bak .\/Server\/Multiplayer\/main\/dedicated_zm.cfg\r\n\r\nchmod -R 777 .\/*\r\n## Make User Aware of the Setup Origin\r\necho \"# Unofficial Pterodactyl-Plutonium Server https:\/\/github.com\/GaryCraft\/ptero-plutonium\" > README.md\r\n\r\necho \"Server Succesfully Installed Enjoy!\"",
             "container": "debian:buster-slim",
             "entrypoint": "sh"
         }
@@ -63,6 +63,15 @@
             "user_viewable": true,
             "user_editable": true,
             "rules": "required|string|in:Multiplayer,Zombie"
+        },
+        {
+            "name": "Download File",
+            "description": "The Server File this server will download and use to run plutonium.\r\nPlease use this with caution, this could enable a user to run arbitrary code which could be potentially harmful.",
+            "env_variable": "SERVER_DOWNLOAD",
+            "default_value": "https:\/\/vault.our-space.xyz\/ATOM\/T6-Server.zip",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "required|url"
         }
     ]
 }
