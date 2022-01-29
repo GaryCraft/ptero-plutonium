@@ -7,7 +7,8 @@ wine --version
 # If .wine directory doesn't exist, copy backup
 if [ ! -d /home/container/.wine ]; 
 then echo "Using Wine backup, copying to container..." && cp -r /wineprefix /home/container/.wine
-echo "Copied Files Succesfully"
+echo "Copied Files Succesfully, Restarting to Initiate Successfully"
+exit 0
 fi;
 
 # Create Shortcuts for zone files
