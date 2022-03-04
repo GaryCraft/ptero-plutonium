@@ -7,7 +7,7 @@ This is intended to make Hosting a server easier and faster, removing the worry 
 
 This Repository is in <span style="color:green; font-weight:1000">working</span> state, however if you think there's an improvement to be made please contribute in the [Issues Tab](https://github.com/GaryCraft/ptero-plutonium/issues)
 
-[![build images](https://github.com/GaryCraft/ptero-plutonium/actions/workflows/docker-image.yml/badge.svg?branch=main)](https://github.com/GaryCraft/ptero-plutonium/actions/workflows/docker-image.yml)
+[![build images](https://github.com/GaryCraft/ptero-plutonium/actions/workflows/docker-images.yml/badge.svg?branch=main)](https://github.com/GaryCraft/ptero-plutonium/actions/workflows/docker-image.yml)
 
 
 ## Required
