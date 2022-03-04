@@ -8,10 +8,8 @@ FROM garycraft/pterowine:ubuntu
 LABEL maintainer="GaryCraft@SpaceProject <garycraft@our-space.xyz>"
 
 USER root
-
-ENV WINEDEBUG=fixme-all
-ENV WINEARCH=win64
-ENV WINEPREFIX=/home/container/.wine
+RUN apt-get install haveged -y
+RUN systemctl enable haveged && systemctl start haveged
 
 COPY checkupdater.sh /checkupdater.sh
 #Make sure the script is executable by anyone
