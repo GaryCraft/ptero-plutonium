@@ -16,7 +16,7 @@ ENV  USER=container HOME=/home/container/
 USER container
 
 WORKDIR /home/container/
-
+COPY checkupdater.sh /checkupdater.sh
 COPY entrypoint.sh /entrypoint.sh
 
 CMD ["/bin/bash", "/entrypoint.sh"]

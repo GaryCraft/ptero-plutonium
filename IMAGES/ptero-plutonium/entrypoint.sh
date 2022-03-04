@@ -1,6 +1,9 @@
 #!/bin/bash
 cd /home/container
 
+# Use checkupdater.sh to download the latest updater and run it
+/checkupdater.sh
+
 # Output Current Wine Version
 wine --version
 
