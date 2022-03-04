@@ -14,12 +14,12 @@ echo "ARM system detected, downloading ARM updater"
 exit 1
 #wget https://github.com/mxve/plutonium-updater.rs/releases/latest/download/plutonium-updater-arm64-unknown-linux-gnu.tar.gz -O /home/container/updater/latestupdater.tar.gz
 fi
-#Extract the updater to /home/container/Server/updater overwriting any existing files
-tar -xvf /home/container/updater/latestupdater.tar.gz -C /home/container/updater/updater
+#Extract the updater to /home/container/updater/ overwriting any existing files
+tar -xvf /home/container/updater/latestupdater.tar.gz -C /home/container/updater/
 #Remove the archive from /home/container/Server/updater
 rm /home/container/Server/updater/latestupdater.tar.gz
 #Run the updater
-chmod +x /home/container/updater/updater
+chmod +x /home/container/updater/plutonium-updater
 echo "Updater found, running updater"
-/home/container/updater/updater -d /home/container/Plutonium
+/home/container/updater/plutonium-updater -d /home/container/Plutonium
 
