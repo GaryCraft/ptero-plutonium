@@ -4,6 +4,9 @@ cd /home/container
 # Use checkupdater.sh to download the latest updater and run it
 /checkupdater.sh
 
+echo "Entropy available"
+cat /proc/sys/kernel/random/entropy_avail
+
 # Output Current Wine Version
 wine --version
 

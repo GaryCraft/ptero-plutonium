@@ -5,14 +5,14 @@ echo "Checking for updates..."
 if [ ! -d /home/container/updater ]; then
 	mkdir /home/container/updater
 fi
-#Downnload the latest version of the server updater depending on architecture to /home/container/Server/updater
+#Downnload the latest version of the server updater depending on architecture to /home/container/Server/updater 
 if [ "$(uname -m)" == "x86_64" ]; then
 echo "64 bit system detected, downloading 64 bit updater"
-wget https://github.com/mxve/plutonium-updater.rs/releases/latest/download/plutonium-updater-x86_64-unknown-linux-gnu.tar.gz -O /home/container/updater/latestupdater.tar.gz
+wget https://github.com/mxve/plutonium-updater.rs/releases/latest/download/plutonium-updater-x86_64-unknown-linux-gnu.tar.gz -O /home/container/updater/latestupdater.tar.gz -q --show-progress
 else
 echo "ARM system detected, downloading ARM updater"
 exit 1
-#wget https://github.com/mxve/plutonium-updater.rs/releases/latest/download/plutonium-updater-arm64-unknown-linux-gnu.tar.gz -O /home/container/updater/latestupdater.tar.gz
+#wget https://github.com/mxve/plutonium-updater.rs/releases/latest/download/plutonium-updater-arm64-unknown-linux-gnu.tar.gz -O /home/container/updater/latestupdater.tar.gz -q --show-progress
 fi
 #Extract the updater to /home/container/updater/ overwriting any existing files
 tar -xvf /home/container/updater/latestupdater.tar.gz -C /home/container/updater/
