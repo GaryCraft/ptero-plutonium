@@ -9,7 +9,7 @@ LABEL maintainer="GaryCraft@SpaceProject <garycraft@our-space.xyz>"
 
 USER root
 RUN apt-get install haveged -y
-RUN systemctl enable haveged
+#RUN systemctl enable haveged
 
 COPY checkupdater.sh /checkupdater.sh
 #Make sure the script is executable by anyone
