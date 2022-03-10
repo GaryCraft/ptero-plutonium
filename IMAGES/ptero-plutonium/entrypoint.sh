@@ -8,7 +8,7 @@ cd /home/container
 wine --version
 
 if [ ! -d /home/container/.wine ]; 
-then echo "Wineprefix not found, initialiizing wine" && winecfg && /usr/sbin/winetricks
+then echo "Wineprefix not found, initialiizing wine" && winecfg
 echo "Configured Succesfully"
 fi;
 
