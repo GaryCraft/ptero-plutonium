@@ -10,18 +10,13 @@ LABEL maintainer="GaryCraft@SpaceProject <garycraft@our-space.xyz>"
 ENV WINEDEBUG=fixme-all
 ENV WINEARCH=win64
 ENV WINEPREFIX=/home/container/.wine
-#ENV WINEDLLOVERRIDES=mscoree
-ENV DISPLAY=:0
-ENV DISPLAY_WIDTH=1024 DISPLAY_HEIGHT=768 DISPLAY_DEPTH=16
-ENV AUTO_UPDATE=1
-ENV XVFB=1
 
 COPY installwine.sh /installwine.sh
 RUN chmod +x /installwine.sh 
 RUN /installwine.sh && rm /installwine.sh
 
 RUN adduser --disabled-password --gecos "" --home /home/container container
-ENV USER=container HOME=/home/container DEBIAN_FRONTEND=noninteractive
+ENV USER=container HOME=/home/container
 USER container
 WORKDIR /home/container
 
