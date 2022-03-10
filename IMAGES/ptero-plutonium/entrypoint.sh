@@ -4,9 +4,6 @@ cd /home/container
 # Use checkupdater.sh to download the latest updater and run it
 /checkupdater.sh
 
-echo "Entropy available"
-cat /proc/sys/kernel/random/entropy_avail
-
 # Output Current Wine Version
 wine --version
 
@@ -33,4 +30,4 @@ MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g'
 echo "Running ${MODIFIED_STARTUP}"
 
 # Run the Server
-( cd /home/container/Plutonium && exec wine ${MODIFIED_STARTUP} )
+( cd /home/container/Plutonium && exec xvfb-run wine ${MODIFIED_STARTUP} )
