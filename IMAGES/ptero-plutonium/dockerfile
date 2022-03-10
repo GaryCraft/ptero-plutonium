@@ -15,7 +15,7 @@ ENV WINEPREFIX=/home/container/.wine
 ENV DISPLAY=:0
 #ENV DISPLAY_WIDTH=1024 DISPLAY_HEIGHT=768 DISPLAY_DEPTH=16
 #ENV AUTO_UPDATE=1
-#ENV XVFB=1
+ENV XVFB=1
 
 COPY checkupdater.sh /checkupdater.sh
 #Make sure the script is executable by anyone
@@ -24,6 +24,15 @@ RUN chmod ugo+x /checkupdater.sh
 ENV  USER=container HOME=/home/container/
 USER container
 WORKDIR /home/container/
+
+ENV WINEDEBUG=fixme-all
+ENV WINEARCH=win64
+ENV WINEPREFIX=/home/container/.wine
+#ENV WINEDLLOVERRIDES=mscoree
+ENV DISPLAY=:0
+#ENV DISPLAY_WIDTH=1024 DISPLAY_HEIGHT=768 DISPLAY_DEPTH=16
+#ENV AUTO_UPDATE=1
+ENV XVFB=1
 
 COPY entrypoint.sh /entrypoint.sh
 
