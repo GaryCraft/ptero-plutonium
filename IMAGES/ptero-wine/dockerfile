@@ -17,7 +17,7 @@ ENV XVFB=1
 
 COPY installwine.sh /installwine.sh
 RUN chmod +x /installwine.sh 
-RUN installwine.sh && rm /installwine.sh
+RUN /installwine.sh && rm /installwine.sh
 
 RUN adduser --disabled-password --gecos "" --home /home/container container
 ENV USER=container HOME=/home/container DEBIAN_FRONTEND=noninteractive
