@@ -10,7 +10,8 @@ LABEL maintainer="GaryCraft@SpaceProject <garycraft@our-space.xyz>"
 ENV WINEDEBUG=fixme-all
 ENV WINEARCH=win64
 ENV WINEPREFIX=/home/container/.wine
-ENV WINEDLLOVERRIDES=mscoree,mshtml=
+ENV WINEDLLOVERRIDES=mscoree
+#,mshtml=
 ENV DISPLAY=:0
 #ENV DISPLAY_WIDTH=1024 DISPLAY_HEIGHT=768 DISPLAY_DEPTH=16
 #ENV AUTO_UPDATE=1
