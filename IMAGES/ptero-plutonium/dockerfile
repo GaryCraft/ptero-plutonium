@@ -8,21 +8,13 @@ FROM ghcr.io/garycraft/ptero-wine:main
 LABEL maintainer="GaryCraft@SpaceProject <garycraft@our-space.xyz>"
 
 USER root
-RUN apt-get install haveged -y
-#RUN systemctl enable haveged
 
 COPY checkupdater.sh /checkupdater.sh
 #Make sure the script is executable by anyone
 RUN chmod ugo+x /checkupdater.sh
 
-
 ENV  USER=container HOME=/home/container/
 USER container
-
-ENV WINEDEBUG=fixme-all
-ENV WINEARCH=win64
-ENV WINEPREFIX=/home/container/.wine
-
 WORKDIR /home/container/
 
 COPY entrypoint.sh /entrypoint.sh

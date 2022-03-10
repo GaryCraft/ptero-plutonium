@@ -10,23 +10,17 @@ LABEL maintainer="GaryCraft@SpaceProject <garycraft@our-space.xyz>"
 ENV WINEDEBUG=fixme-all
 ENV WINEARCH=win64
 ENV WINEPREFIX=/home/container/.wine
+ENV WINEDLLOVERRIDES=mscoree,mshtml=
+ENV DISPLAY=:0 DISPLAY_WIDTH=1024 DISPLAY_HEIGHT=768 DISPLAY_DEPTH=16
+ENV AUTO_UPDATE=1
+ENV XVFB=1
+
+COPY installwine.sh /installwine.sh
+RUN chmod +x /installwine.sh && installwine.sh && rm /installwine.sh
 
 RUN adduser --disabled-password --gecos "" --home /home/container container
-
-RUN apt-get update && apt-get install wget -y && wget https://raw.githubusercontent.com/GaryCraft/ptero-plutonium/main/IMAGES/ptero-wine/installwine.sh && bash installwine.sh
-
-ENV  USER=container HOME=/home/container
-
+ENV USER=container HOME=/home/container DEBIAN_FRONTEND=noninteractive
 USER container
-
-RUN winecfg
-
-USER root
-
-RUN mkdir /wineprefix && cp -r /home/container/.wine /wineprefix && chmod 777 /wineprefix
-
-USER container
-
 WORKDIR /home/container
 
 COPY entrypoint.sh /entrypoint.sh

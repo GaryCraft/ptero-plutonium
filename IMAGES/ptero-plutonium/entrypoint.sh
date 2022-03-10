@@ -10,12 +10,11 @@ cat /proc/sys/kernel/random/entropy_avail
 # Output Current Wine Version
 wine --version
 
-# If .wine directory doesn't exist, copy backup
 if [ ! -d /home/container/.wine ]; 
-then echo "Using Wine backup, copying to container..." && cp -r /wineprefix /home/container/.wine
-echo "Copied Files Succesfully, Restarting to Initiate Successfully"
-exit 0
+then echo "Wineprefix not found, initialiizing wine" && winecfg && /usr/sbin/winetricks
+echo "Configured Succesfully"
 fi;
+
 
 # Create Shortcuts for zone files
 if [ ! -e /home/container/Server/Zombie/zone ];
@@ -34,4 +33,4 @@ MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g'
 echo "Running ${MODIFIED_STARTUP}"
 
 # Run the Server
-( cd /home/container/Plutonium && exec xvfb-run wine ${MODIFIED_STARTUP} )
+( cd /home/container/Plutonium && exec wine ${MODIFIED_STARTUP} )
