@@ -1,10 +1,11 @@
-name: Build image manually
+name: Build Docker image manually
+
 
 on:
   workflow_dispatch:
     inputs:
       branch:
-        description: 'Branch to build'
+        description: 'Tag for image'
         default: 'dev'
         required: true
       image:
@@ -13,7 +14,7 @@ on:
         required: true
 jobs:
   build:
-    name: "${{ github.event.inputs.branch }} ${{ github.event.inputs.image }} build"
+    name: "Build ${{ github.event.inputs.image }}:${{ github.event.inputs.branch }}"
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2

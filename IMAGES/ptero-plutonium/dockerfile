@@ -3,18 +3,18 @@
 # Environment: Ubuntu 20.04
 # Minimum Panel Version: 1.0.0
 # ----------------------------------
-FROM garycraft/pterowine:ubuntu
+FROM ghcr.io/garycraft/ptero-wine:latest
 
 LABEL maintainer="GaryCraft@SpaceProject <garycraft@our-space.xyz>"
 
-ENV WINEDEBUG=fixme-all
-ENV WINEARCH=win64
-ENV WINEPREFIX=/home/container/.wine
+USER root
+
+COPY checkupdater.sh /checkupdater.sh
+#Make sure the script is executable by anyone
+RUN chmod ugo+x /checkupdater.sh
 
 ENV  USER=container HOME=/home/container/
-
 USER container
-
 WORKDIR /home/container/
 
 COPY entrypoint.sh /entrypoint.sh

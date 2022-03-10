@@ -31,9 +31,8 @@ wine --version
 
 
 # Install winetricks
-wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
-chmod u+x winetricks
-cp winetricks /usr/local/bin
+wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks -O /usr/sbin/winetricks
+chmod a+x /usr/sbin/winetricks
 
 
 # Configure our wine environment
