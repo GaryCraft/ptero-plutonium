@@ -1,5 +1,5 @@
 # ----------------------------------
-# Pterodactyl .NET Dockerfile
+# Pterodactyl Python3.9 Dockerfile
 # Environment: Ubuntu 20.04
 # Minimum Panel Version: 1.0.0
 # ----------------------------------
@@ -25,7 +25,6 @@ WORKDIR /home/container
 COPY entrypoint.sh /entrypoint.sh
 
 CMD ["/bin/bash", "/entrypoint.sh"]
-
 # -----------------------------------------------------------------------------
 # THIS SCRIPT HAS TO BE REVEIWED AND REVISIONED. THIS IS NOT A FINISHED PRODUCT.
 # THESE LINES CAN BE DELETED AFTER CODE HAS BEEN EXPIREMENTED AND REVISIONED.
