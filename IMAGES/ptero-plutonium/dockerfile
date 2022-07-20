@@ -13,8 +13,9 @@ COPY checkupdater.sh /checkupdater.sh
 #Make sure the script is executable by anyone
 RUN chmod ugo+x /checkupdater.sh
 
-ENV  USER=container HOME=/home/container/
 USER container
+ENV  USER=container HOME=/home/container
+
 WORKDIR /home/container/
 
 COPY entrypoint.sh /entrypoint.sh
