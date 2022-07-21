@@ -16,6 +16,9 @@ RUN chmod +x /installwine.sh
 RUN /installwine.sh && rm /installwine.sh
 
 RUN adduser --disabled-password --gecos "" --home /home/container container
+
+# Ensure /home/container is owned by container
+RUN chown -R container:container /home/container
 USER container
 ENV  USER=container HOME=/home/container
 

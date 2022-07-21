@@ -12,6 +12,8 @@ USER root
 COPY checkupdater.sh /checkupdater.sh
 #Make sure the script is executable by anyone
 RUN chmod ugo+x /checkupdater.sh
+# Ensure /home/container is owned by container
+RUN chown -R container:container /home/container
 
 USER container
 ENV  USER=container HOME=/home/container
