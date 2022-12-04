@@ -16,8 +16,8 @@ exit 1
 fi
 #Extract the updater to /home/container/updater/ overwriting any existing files
 tar -xvf /home/container/updater/latestupdater.tar.gz -C /home/container/updater/
-#Remove the archive from /home/container/Server/updater
-rm /home/container/Server/updater/latestupdater.tar.gz
+#Remove the archive from /home/container/updater
+rm /home/container/updater/latestupdater.tar.gz
 #Run the updater
 chmod +x /home/container/updater/plutonium-updater
 echo "Updater found, running updater"
