@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
+      max-parallel: 1
       matrix:
         tag:
          - ptero-wine
