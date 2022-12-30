@@ -11,6 +11,7 @@ echo "64 bit system detected, downloading 64 bit updater"
 wget https://github.com/mxve/plutonium-updater.rs/releases/latest/download/plutonium-updater-x86_64-unknown-linux-gnu.tar.gz -O /home/container/updater/latestupdater.tar.gz -q --show-progress
 else
 echo "ARM system detected, downloading ARM updater"
+echo "ARM is currently not supported, please use a 64 bit system"
 exit 1
 #wget https://github.com/mxve/plutonium-updater.rs/releases/latest/download/plutonium-updater-arm64-unknown-linux-gnu.tar.gz -O /home/container/updater/latestupdater.tar.gz -q --show-progress
 fi
