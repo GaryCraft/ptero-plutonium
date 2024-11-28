@@ -22,7 +22,7 @@ export WINEDEBUG=fixme-all
 
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
-//UPDATE_STARTUP=`bin/plutonium-bootstrapper-win32.exe -update-only`
+# UPDATE_STARTUP=`bin/plutonium-bootstrapper-win32.exe -update-only`
 UPDATE_STARTUP=`eval echo $(echo ${UPDATE_COMMAND} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 
 # Run Plutonium as self-updater
